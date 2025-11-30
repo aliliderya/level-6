@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+void hesabla(int massiv[], int a) {
+    int cem = 0;
+    int hasil = 1;
+    int maks = massiv[0];
+    int min = massiv[0];
+
+    for(int i = 0; i < a; i++) {
+        cem += massiv[i];
+        hasil *= massiv[i];
+        if(massiv[i] > maks) maks = massiv[i];
+        if(massiv[i] < min) min = massiv[i];
+    }
+
+    cout << "Cem: " << cem << endl;
+    cout << "Hasil: " << hasil << endl;
+    cout << "Maksimum: " << maks << endl;
+    cout << "Minimum: " << min << endl;
+}
+
+int main() {
+    int arr[] = {5, 9, 22, 4};
+    int a = sizeof(arr) / sizeof(arr[0]);  
+
+    hesabla(arr, a);
+    return 0;
+}
